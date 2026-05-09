@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;700;900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  --color-neo-yellow: #ffdf00;
+  --color-neo-orange: #ff4911;
+  --color-neo-pink: #ffaebc;
+  --color-neo-cyan: #a0e7e5;
+  --color-neo-green: #b4f8c8;
+  --color-neo-bg: #f0f0f0;
+  --color-neo-black: #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply bg-neo-bg text-neo-black font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .neo-shadow {
+    box-shadow: 4px 4px 0px 0px rgba(26, 26, 26, 1);
+  }
+  .neo-shadow-sm {
+    box-shadow: 2px 2px 0px 0px rgba(26, 26, 26, 1);
+  }
+  .neo-shadow-lg {
+    box-shadow: 8px 8px 0px 0px rgba(26, 26, 26, 1);
+  }
+  .neo-border {
+    border: 3px solid var(--color-neo-black);
+  }
+  .neo-card {
+    background-color: white;
+    border: 3px solid var(--color-neo-black);
+    box-shadow: 4px 4px 0px 0px rgba(26, 26, 26, 1);
+    border-radius: 0;
+  }
+  .neo-btn {
+    background-color: var(--color-neo-yellow);
+    border: 3px solid var(--color-neo-black);
+    box-shadow: 4px 4px 0px 0px rgba(26, 26, 26, 1);
+    border-radius: 0;
+    font-family: var(--font-display);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.75rem 1.5rem;
+    transition:
+      transform 0.1s,
+      box-shadow 0.1s;
+  }
+  .neo-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px rgba(26, 26, 26, 1);
+  }
+  .neo-input {
+    background-color: white;
+    border: 3px solid var(--color-neo-black);
+    box-shadow: 2px 2px 0px 0px rgba(26, 26, 26, 1);
+    border-radius: 0;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-sans);
+    outline: none;
+  }
+  .neo-input:focus {
+    outline: 2px solid var(--color-neo-black);
+    outline-offset: 2px;
+  }
+}
